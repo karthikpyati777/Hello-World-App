@@ -1,5 +1,5 @@
 # Step 1: Build the application using Maven and Java 17
-FROM maven:3.8.8-eclipse-temurin-17 AS build
+FROM maven:3.8.7-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy Maven project files
