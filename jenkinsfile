@@ -42,11 +42,16 @@ pipeline {
             }
         }
 
-        stage('k8s deploy'){
-            steps{
-               sh 'kubectl apply -f mavenwebapp-deployment.yaml'
-            }
-        }
+       stage('Deploy to Kubernetes') {
+    steps {
+        sh '''
+        kubectl apply -f mavenwebapp-deployment.yaml
+        kubectl get pods
+        kubectl get svc
+        '''
+    }
+}
+
 
 
     }
